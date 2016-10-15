@@ -1,0 +1,26 @@
+<h2>Books</h2>
+<ul class="books">
+  <li *ngFor="let book of books"
+    [class.selected]="book === selectedBook"
+    (click)="onSelect(book)">
+    <span class="badge">{{book._id}}</span>
+    <span>{{book.title}}</span>
+    <button class="delete" (click)="delete(book); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+
+<div *ngIf="selectedBook">
+  <h2>
+    {{selectedBook.title | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<add-book (bookUpdated)="bookUpdated($event)"></add-book>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

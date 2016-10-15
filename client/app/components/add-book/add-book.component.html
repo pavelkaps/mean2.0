@@ -1,0 +1,31 @@
+<form [formGroup]="addBookForm" novalidate (ngSubmit)="save(addBookForm.value)">
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <label>Title</label>
+            </td>
+            <td>
+                <input type="text" formControlName="title">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Author</label>
+            </td>
+            <td>
+                <input type="text" formControlName="author">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Year</label>
+            </td>
+            <td>
+                <input type="number" formControlName="year">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="submit">Add</button>
+</form>
